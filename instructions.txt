@@ -1,0 +1,8 @@
+Run json_to_txt.py to convert the bounding box coordinates to the appropriate format.
+Run div_img.py to create train.txt and test.txt. These contain the filenames for the train and test sets.
+Follow AlexeyAB's github description on How to train (to detect custom objects)
+
+Run below command to train:  (if you wish to start training from a certain point, you can provide the path to the .weights file)
+dn/darknet/darknet detector train -map cfg/obj.data cfg/yolov3-spp.cfg backup/yolov3-spp_last.weights 
+
+dn/darknet/darknet detector test cfg/obj.data cfg/yolov3-sppD.cfg backup/yolov3-spp_5200.weights -ext_output  -thresh 0.7
